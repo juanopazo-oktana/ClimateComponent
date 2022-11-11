@@ -1,0 +1,29 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                <div class="slds-truncate" title="Time">Time</div>
+                </th>
+                <th class="" scope="col">
+                <div class="slds-truncate" title="Max Temperature">Max Temperature</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={hourlyClimateValues} for:item="record">
+                <tr class="slds-hint-parent" key={record.t}>
+                    <th data-label="Time" scope="row">
+                    <div class="slds-truncate" title="Time">
+                    <a href="#" tabindex="-1">{record.t}</a>
+                    </div>
+                    </th>
+                    <td data-label="Max Temperature">
+                    <div class="slds-truncate" title="Max Temperature">{record.temp_2m}</div>
+                    </td>
+                </tr>
+            </template>
+            
+        </tbody>
+    </table>
+</template>
